@@ -32,7 +32,7 @@ public class App {
 		var authorizationURL = builder.build();
 		System.err.printf("Copy the following URL to your browser and proceed the login\n\n");
 		System.err.printf("%s\n\n", authorizationURL);
-		System.err.printf("After you have finished, paste the authorization code here\n\n", authorizationURL);
+		System.err.printf("After you have finished, paste the authorization code here\n\n");
 
 		var scanner = new Scanner(System.in, "UTF-8");
 		var code = scanner.nextLine();
