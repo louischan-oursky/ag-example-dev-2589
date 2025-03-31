@@ -17,3 +17,19 @@ java-oidc-verify:
 .PHONY: java-oidc-validate
 java-oidc-validate:
 	@$(MAKE) -s -C ./java-oidc-validate run
+
+.PHONY: dotnet-oidc-login
+dotnet-oidc-login:
+	@$(MAKE) -s -C ./dotnet-oidc-login run
+
+.PHONY: dotnet-oidc-decrypt
+dotnet-oidc-decrypt:
+	@$(MAKE) -s -C ./dotnet-oidc-decrypt run
+
+.PHONY: dotnet-oidc-verify
+dotnet-oidc-verify:
+	@$(MAKE) -s -C ./dotnet-oidc-verify run
+
+.PHONY: dotnet-oidc-validate
+dotnet-oidc-validate:
+	@$(MAKE) -s -C ./dotnet-oidc-validate run

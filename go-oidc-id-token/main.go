@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+	"time"
 
 	"github.com/lestrrat-go/jwx/v2/jwa"
 	"github.com/lestrrat-go/jwx/v2/jwe"
@@ -31,6 +32,13 @@ func main() {
 
 	token := jwt.New()
 	token.Set(jwt.SubjectKey, "USER_ID")
+	token.Set(jwt.AudienceKey, "AUDIENCE")
+	token.Set(jwt.IssuerKey, "ISSUER")
+
+	iat := time.Date(2025, 3, 31, 10, 30, 0, 0, time.UTC)
+	exp := time.Date(2050, 3, 31, 10, 30, 0, 0, time.UTC)
+	token.Set(jwt.IssuedAtKey, iat.Unix())
+	token.Set(jwt.ExpirationKey, exp.Unix())
 
 	serializer := jwt.NewSerializer().
 		Sign(jwt.WithSignOption(jws.WithKey(jwa.RS256, signKey))).
